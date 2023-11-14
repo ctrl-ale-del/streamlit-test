@@ -1,12 +1,12 @@
-#Chatbot that repeats content
+
 import streamlit as st
 import pandas as pd
 import numpy as np
 import random
 import time
 
-st.title(":green[ChatGPT Clone]")
-st.sidebar.markdown("# ChatGPT Clone")
+st.title(":green[Random Chat]")
+st.sidebar.markdown("# Random Chat")
 
 #Initialize the chat history
 if "messages" not in st.session_state:
@@ -33,7 +33,7 @@ with st.chat_message("ai"):
             "Hello",
             "No",
             "YES",
-            "I am a bot",
+            "Maybe",
         ]
     )
 
@@ -46,38 +46,3 @@ with st.chat_message("ai"):
     message_placeholder.markdown(full_response)
 
     st.session_state.messages.append({"role": "assistant", "content": full_response})
-
-
-
-
-
-
-#CODE FOR A BOT THAT COPIES YOU
-
-    #response = f"A.I: {prompt}"
-    #Display ai response 
-    #with st.chat_message("ai"):
-    #    st.markdown(response)
-    #Add response to chat history
-    #st.session_state.messages.append({"role": "assistant", "content": response})
-
-    
-
-
-
-
-# CODE FOR PRE DETERMINE TEXT
-
-#icon can be set to: user, assistant, ai, human, or string(first letter = icon)
-#with st.chat_message("A"):
-#    st.write("Hello :wave:")
-
-#Can write with message instead of with (more code)
-#message = st.chat_message("assistant")
-#message.write("Hey")
-#message.bar_chart(np.random.randn(30, 2))
-
-#Prompt the user for input, and show it
-#prompt = st.chat_input("Say Something:")
-#if prompt:
-#    st.write(f"User has sent the following prompt: {prompt}")
